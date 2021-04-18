@@ -35,7 +35,7 @@ const ProductDetails = (props) => {
 
 
 const buyHandler=()=>{
-  props.history.push(`/cart/${id}?qty=${qty}`);
+  props.history.push(`/cart/${id}?qty=${qty?qty:1}`);
 }
 
 
