@@ -8,6 +8,7 @@ import "./Details.css";
 import "../Home/Home.css";
 
 const ProductDetails = (props) => {
+  
   const [qty, setQty] = useState();
   const id = props.match.params.id;
   // console.log(id);
@@ -127,7 +128,7 @@ const buyHandler=()=>{
                   <p>{name}</p>
                   <div className="disPrice">
                     <p>$ {price}</p>
-                    <Link to={`details/${_id}`}>
+                    <Link to={`/details/${_id}`}>
                       <button className="viewdetails">View Details</button>
                     </Link>
                   </div>
