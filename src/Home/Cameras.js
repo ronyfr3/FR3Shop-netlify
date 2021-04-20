@@ -43,7 +43,7 @@ const Cameras = () => {
                   <p>{name}</p>
                   <div className="disPrice">
                     <p>$ {price}</p>
-                    <Link to={`details/${_id}`}>
+                    <Link to={`/details/${_id}`}>
                       <button className="viewdetails">View Details</button>
                     </Link>
                   </div>
