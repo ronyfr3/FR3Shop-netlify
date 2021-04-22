@@ -9,7 +9,8 @@ import "../Home/Home.css";
 
 const ProductDetails = (props) => {
   
-  const [qty, setQty] = useState();
+  const [qty, setQty] = useState(1);
+  console.log(setQty)
   const id = props.match.params.id;
   // console.log(id);
   const singleProduct = useSelector((state) => state.productDetails);
@@ -36,7 +37,7 @@ const ProductDetails = (props) => {
 
 
 const buyHandler=()=>{
-  props.history.push(`/cart/${id}?qty=${qty?qty:1}`);
+  props.history.push(`/cart/${id}?qty=${qty}`);
 }
 
 
@@ -77,18 +78,7 @@ const buyHandler=()=>{
                 <p className="proname">Name: {product.name}</p>
                 <p className="price">Price: ${product.price}</p>
               </div>
-              <div className="row">
-                <div>Qty</div>
-                <div style={{position:'relative',left:'-30px'}}>
-                  <select value={qty} onChange={(e) => setQty(e.target.value)}>
-                    {[...Array(15).keys()].map((x) => (
-                      <option key={x + 1} value={x + 1}>
-                        {x + 1}
-                      </option>
-                    ))}
-                  </select>
-                </div>
-              </div>
+             
             </div>
             <div className="skumod">
               <p className="sku">SKU: {product.sku}</p>
